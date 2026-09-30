@@ -1,0 +1,4 @@
+datasets: [UMCU]            # keys of paths.datasets (configs/paths/default.yaml)
+eval_wmh: true              # lesion statistics (sessions with a WMH mask)
+cache: true
+results_dir: test_umcu

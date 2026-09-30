@@ -1,0 +1,28 @@
+# Inference config:  python test.py experiment=<name> test_set=<umcu|mrrate> [checkpoint=paper]
+defaults:
+  - paths: default
+  - data: clinical
+  - model: adain
+  - physics: teixeira
+  - loss: default
+  - optim: adam
+  - test_set: umcu
+  - checkpoint: trained
+  - _self_
+  - experiment: null
+
+name: full_model
+seed: 0                     # only used to draw data.max_sessions.test subsets
+gpu: 0
+
+epoch: latest               # checkpoint to load: <epoch>_net_G.pth
+output_dir: ${checkpoint_dir}/${test_set.results_dir}
+save_nifti: true            # q-maps, synthetic/real images and tissue masks per session
+save_figures: true          # quick-look figure per session
+exclude_wmh_from_tissue: true  # remove WMH lesion voxels from WM/GM (normal-appearing tissue)
+
+hydra:
+  run:
+    dir: ${output_dir}
+  job:
+    chdir: false

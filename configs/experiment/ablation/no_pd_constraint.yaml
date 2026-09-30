@@ -1,0 +1,6 @@
+# @package _global_
+# Regularization ablation (paper): without the PD constraint.
+name: no_pd_constraint
+loss:
+  pd_constraint:
+    weight: 0.0

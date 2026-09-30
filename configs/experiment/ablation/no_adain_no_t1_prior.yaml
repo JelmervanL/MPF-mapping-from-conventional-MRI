@@ -1,0 +1,8 @@
+# @package _global_
+# No AdaIN and no WM T1f prior (not reported in the paper).
+defaults:
+  - override /model: no_adain
+name: no_adain_no_t1_prior
+loss:
+  t1_prior:
+    weight: 0.0

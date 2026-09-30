@@ -1,0 +1,6 @@
+# @package _global_
+# Protocol hold-out (paper): trained on Spoiled GRE sessions only (MPRAGE withheld).
+name: gre_only
+data:
+  filter:
+    t1w_sequence: [GRE_TFE]

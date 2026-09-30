@@ -1,0 +1,4 @@
+datasets: [MR-RATE]         # keys of paths.datasets (configs/paths/default.yaml)
+eval_wmh: true
+cache: true
+results_dir: test_mrrate

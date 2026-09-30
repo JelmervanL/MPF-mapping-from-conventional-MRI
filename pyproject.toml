@@ -1,0 +1,35 @@
+[project]
+name = "qmap-mpf"
+version = "1.0.0"
+description = "Physics-guided self-supervised mapping of T1f, T2f, PD and macromolecular pool fraction from conventional clinical brain MRI"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+# Versions are pinned to the environment that produced the published results. The network
+# outputs are only guaranteed to be bit-identical with this exact torch/cuDNN build.
+dependencies = [
+    "torch==2.1.2",
+    "torchio==0.20.6",
+    "numpy==1.26.4",
+    "scipy==1.15.2",
+    "pandas==2.2.3",
+    "nibabel==5.3.3",
+    "SimpleITK==2.5.3",
+    "matplotlib==3.10.7",
+    "seaborn==0.13.2",
+    "tqdm==4.67.1",
+    "hydra-core==1.3.2",
+    "omegaconf==2.3.0",
+    "wandb==0.19.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.uv]
+# The code is run from the repository root (train.py, test.py, scripts/); the
+# project itself is not installed, only its dependencies.
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

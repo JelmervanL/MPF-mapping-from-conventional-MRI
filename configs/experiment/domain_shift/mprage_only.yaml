@@ -1,0 +1,6 @@
+# @package _global_
+# Protocol hold-out (paper): trained on MPRAGE sessions only (Spoiled GRE withheld).
+name: mprage_only
+data:
+  filter:
+    t1w_sequence: [MPRAGE]

@@ -1,0 +1,12 @@
+# Training objective (paper Eq. 12).
+image_l1: 1.0               # L1 data consistency between rescaled synthetic and input images
+pd_constraint:              # hinge max(0, threshold - PD) over the brain
+  weight: 0.5
+  threshold: 0.65
+t1_prior:                   # Gaussian prior on T1f in white matter
+  weight: 0.0025
+  mean_ms: 2000.0
+  sigma_ms: 400.0
+rescaling:                  # closed-form least-squares scaling of each synthetic contrast
+  method: bounded           # bounded: clamp to +/- bound around the WM-reference factor; unbounded
+  bound: 0.2

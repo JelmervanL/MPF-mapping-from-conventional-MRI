@@ -1,0 +1,35 @@
+# Training config. Compose with an experiment:  python train.py experiment=no_adain
+defaults:
+  - paths: default
+  - data: clinical
+  - model: adain
+  - physics: teixeira
+  - loss: default
+  - optim: adam
+  - _self_
+  - experiment: null
+
+name: full_model            # run name; new runs are written to ${paths.output_root}/${name}
+seed: 0
+gpu: 0                      # CUDA device index, -1 for CPU
+deterministic: false        # deterministic cuDNN/cuBLAS kernels (slower, bit-reproducible GPU runs)
+
+train:
+  epochs: 10
+  save_every: 1             # save <epoch>_net_G.pth (and latest_net_G.pth) every n epochs
+  warmup:
+    iters: 1000             # supervised warm-up steps towards constant WM values
+    targets: ${physics.wm_reference}
+  validate: true            # clinical validation set after every epoch
+
+logging:
+  wandb: false              # metrics are always written to ${run_dir}/metrics.jsonl
+  wandb_project: qmap_mpf
+
+run_dir: ${paths.output_root}/${name}
+
+hydra:
+  run:
+    dir: ${run_dir}
+  job:
+    chdir: false

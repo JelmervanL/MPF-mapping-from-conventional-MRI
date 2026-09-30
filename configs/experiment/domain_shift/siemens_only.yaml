@@ -1,0 +1,6 @@
+# @package _global_
+# Vendor hold-out: trained on Siemens (MR-RATE) sessions only (not reported in the paper).
+name: siemens_only
+data:
+  filter:
+    manufacturer: [Siemens]

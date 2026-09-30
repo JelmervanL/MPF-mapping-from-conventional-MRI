@@ -1,0 +1,6 @@
+# @package _global_
+# Vendor hold-out: trained on Philips (UMCU) sessions only (not reported in the paper).
+name: philips_only
+data:
+  filter:
+    manufacturer: [Philips]

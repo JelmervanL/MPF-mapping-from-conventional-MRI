@@ -1,0 +1,6 @@
+# @package _global_
+# Unbounded least-squares rescaling of the synthetic images (not reported in the paper).
+name: unbounded_rescaling
+loss:
+  rescaling:
+    method: unbounded

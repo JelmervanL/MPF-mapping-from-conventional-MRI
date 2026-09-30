@@ -1,0 +1,10 @@
+# @package _global_
+# No AdaIN and no regularization (not reported in the paper).
+defaults:
+  - override /model: no_adain
+name: no_adain_no_regularization
+loss:
+  pd_constraint:
+    weight: 0.0
+  t1_prior:
+    weight: 0.0

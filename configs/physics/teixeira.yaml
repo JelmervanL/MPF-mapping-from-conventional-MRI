@@ -1,0 +1,15 @@
+# MT-informed forward model (Teixeira et al. 2019) with fixed semisolid-pool parameters.
+gamma: 267513000.0          # gyromagnetic ratio [rad s^-1 T^-1]
+t2_bound_s: 1.25e-05        # T2 of the semisolid pool [s]
+t1_bound_ms: 300.0          # T1 of the semisolid pool [ms]
+exchange_rate: 13.6         # Rx [s^-1]
+output_scale:               # sigmoid outputs -> physical ranges
+  pd: 1
+  t1_s: 5
+  t2_s: 3
+  m0s: 0.4
+wm_reference:               # representative WM values: rescaling anchor and warm-up targets
+  pd: 0.7
+  t2_ms: 70.0
+  t1_free_ms: 2000.0
+  m0s: 0.21

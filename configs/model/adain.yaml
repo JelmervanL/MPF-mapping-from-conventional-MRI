@@ -1,0 +1,6 @@
+# Proposed model: shared-encoder attention U-Net with acquisition-conditioned AdaIN.
+arch: adain
+feature_channels: [64, 128, 256]
+adain:
+  mlp_layers: 2             # conditioning MLP: 9 -> 64 -> 128
+  embed_dim: 128

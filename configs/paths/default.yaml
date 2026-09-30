@@ -1,0 +1,12 @@
+# Data locations. Set QMAP_DATA_ROOT (or override paths.data_root) to the folder that holds the
+# preprocessed datasets; see README.md for the expected layout of each dataset root.
+data_root: ${oc.env:QMAP_DATA_ROOT,data}
+datasets:
+  MR-RATE:
+    root: ${paths.data_root}/MR-RATE
+    csv_suffix: .csv        # the loader reads <root>/<phase><csv_suffix>, e.g. train.csv
+  UMCU:
+    root: ${paths.data_root}/UMCU
+    csv_suffix: .csv
+pretrained_dir: checkpoints/trained_model   # downloaded pre-trained weights (latest_net_G.pth)
+output_root: outputs                        # new training runs

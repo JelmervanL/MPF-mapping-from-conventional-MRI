@@ -1,0 +1,17 @@
+# Training/validation data and preprocessing. The datasets are selected by name; their folders
+# (<QMAP_DATA_ROOT>/...) and CSV names are defined in configs/paths/default.yaml.
+datasets: [MR-RATE, UMCU]   # keys of paths.datasets (configs/paths/default.yaml)
+modenorm_mask: wm           # intensity normalization by the histogram mode inside 'wm' or 'brain'
+batch_size: 16              # slices per batch
+slices_per_volume: 8        # random axial slices drawn per session and epoch
+num_workers: 8
+cache:
+  enabled: true             # reuse <root>/preprocessed_cache (deterministic preprocessing)
+  dir: null                 # null -> <dataset root>/preprocessed_cache
+max_sessions:               # random subset of sessions per dataset (0 = all); int or one int per dataset
+  train: 0
+  val: 0
+  test: 0
+filter:                     # keep only these groups (used for the protocol hold-out experiments)
+  manufacturer: []          # e.g. [Philips] or [Siemens]
+  t1w_sequence: []          # e.g. [MPRAGE] or [GRE_TFE] (spoiled GRE)

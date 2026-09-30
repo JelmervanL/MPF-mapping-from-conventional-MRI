@@ -1,0 +1,3 @@
+# @package _global_
+# Load a model trained with train.py (same experiment name).
+checkpoint_dir: ${paths.output_root}/${name}

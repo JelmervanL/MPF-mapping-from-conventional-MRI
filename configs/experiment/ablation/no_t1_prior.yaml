@@ -1,0 +1,6 @@
+# @package _global_
+# Regularization ablation (paper): without the WM T1f prior.
+name: no_t1_prior
+loss:
+  t1_prior:
+    weight: 0.0

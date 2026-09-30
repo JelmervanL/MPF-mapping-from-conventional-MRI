@@ -1,0 +1,8 @@
+# @package _global_
+# Regularization ablation (paper): without both regularization terms.
+name: no_regularization
+loss:
+  pd_constraint:
+    weight: 0.0
+  t1_prior:
+    weight: 0.0

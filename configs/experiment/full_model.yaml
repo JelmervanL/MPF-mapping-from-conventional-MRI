@@ -1,0 +1,3 @@
+# @package _global_
+# Proposed model (paper): AdaIN, PD constraint and WM T1f prior, rescaling bound +/-20 %.
+name: full_model

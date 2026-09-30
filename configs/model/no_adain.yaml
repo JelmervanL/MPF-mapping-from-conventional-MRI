@@ -1,0 +1,3 @@
+# Ablation: the same network with plain instance normalization (no acquisition conditioning).
+arch: no_adain
+feature_channels: [64, 128, 256]

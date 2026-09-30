@@ -1,0 +1,24 @@
+# Checkpoints, data and everything generated from them (these contain or are derived from patient data)
+checkpoints/*
+!checkpoints/trained_model/
+checkpoints/trained_model/*
+!checkpoints/trained_model/README.md
+outputs/
+results/
+wandb/
+tests
+*.pth
+*.pt
+*.nii
+*.nii.gz
+
+# Environment and build artefacts
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Manuscript (not part of the code release)
+main.tex
+multirun/

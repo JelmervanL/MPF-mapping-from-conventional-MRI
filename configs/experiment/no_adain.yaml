@@ -1,0 +1,5 @@
+# @package _global_
+# Impact of acquisition-conditioned AdaIN: instance normalization instead of AdaIN.
+defaults:
+  - override /model: no_adain
+name: no_adain
