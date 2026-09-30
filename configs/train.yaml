@@ -15,7 +15,7 @@ gpu: 0                      # CUDA device index, -1 for CPU
 deterministic: false        # deterministic cuDNN/cuBLAS kernels (slower, bit-reproducible GPU runs)
 
 train:
-  epochs: 10
+  epochs: 20
   save_every: 1             # save <epoch>_net_G.pth (and latest_net_G.pth) every n epochs
   warmup:
     iters: 1000             # supervised warm-up steps towards constant WM values
